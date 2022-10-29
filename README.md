@@ -1,10 +1,10 @@
 # Name : Venkatesh Subramaniyan
 
-# Crackstation - 1.0.0
-The following version supports single character. The list of characters include alphabets (both uppercase and lowercase) and numbers (0-9).
+# Crackstation - 2.0.0
+The following version supports single as well as double character decryption. The list of characters include alphabets (both uppercase and lowercase) and numbers (0-9).
 
 ## Package CrackStation 
-The following method (**Decrypt**) accepts the SHA1 encrypted string and returns a decrypted character.
+The following method (**Decrypt**) accepts the SHA1 encrypted string and returns the decrypted string.
 
     Decrypt:
         input arguments (heading):
@@ -13,7 +13,7 @@ The following method (**Decrypt**) accepts the SHA1 encrypted string and returns
             returns the decrypted output. 	
 
 ## Usage:
-1. add this git url (`.package(url: "https://github.com/Venseven/CrackStation.git", from: "1.0.0")`)  in `package.swift` (package -> target/test -> dependencies)
+1. add this git url (`.package(url: "https://github.com/Venseven/CrackStation.git", from: "2.0.0")`)  in `package.swift` (package -> target/test -> dependencies)
 2.
 ```  swift
 import CrackStation
