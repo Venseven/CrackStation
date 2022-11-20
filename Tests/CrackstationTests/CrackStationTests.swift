@@ -6,9 +6,10 @@ final class CrackstationTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        let object = try! CrackStation()
-        let decrypted = object.decrypt(shaHash: "c63ae6dd4fc9f9dda66970e827d13f7c73fe841c")
-        print(decrypted)
-        XCTAssertEqual(decrypted, "M")
+        let startingPoint = Date()
+        let object =  CrackStation()
+        let decrypted = object.decrypt(shaHash: "77de68daecd823babbb58edb1c8e14d7106e83bb")
+        XCTAssertEqual(decrypted, "3")
+        print("\(startingPoint.timeIntervalSinceNow * -1) seconds elapsed")
     }
 }

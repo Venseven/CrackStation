@@ -25,6 +25,7 @@ let package = Package(
 
         .testTarget(
             name: "CrackStationTests",
-            dependencies: ["CrackStation"]),
+            dependencies: ["CrackStation"],
+            path: "Tests"),
     ]
 )

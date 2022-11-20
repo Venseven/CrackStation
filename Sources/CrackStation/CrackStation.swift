@@ -1,38 +1,29 @@
-import Foundation
+import Foundation 
 import XCTest
-public protocol Decrypter {
-    init()
-
-    func decrypt(shaHash: String) -> String? 
-        
-}
-
 
 public class CrackStation: Decrypter
 {
-    required public init()
-    {
-
-    }
-    public func decrypt(shaHash: String) -> String?{
-        
-        guard let path = Bundle.module.url(forResource: "data", withExtension: "json") else { return "nil" }
-
-        let data = try! Data(contentsOf: path)
-        let jsonResult = try! JSONSerialization.jsonObject(with: data)
-
-        if let lookupTable: Dictionary = jsonResult as? Dictionary<String, String> {
-           let answer=lookupTable[shaHash]
-           if answer != nil{
-            return answer!
-            }
-           else{
-            return nil
-            }
+    private var lookUpfromDictionary = Dictionary<String,String>()
+    required public init(){
+        do{
+            lookUpfromDictionary = try loadFromJsonDictionary()
         }
-        return "nil"
-    }
-}
-	
+        catch{
+            lookUpfromDictionary = ["":""]
+        }
 
-    
+    }
+    public func decrypt(shaHash: String) -> String?{    
+        let decrypted_password = lookUpfromDictionary[shaHash]
+        return decrypted_password
+    }
+    private func loadFromJsonDictionary() throws -> Dictionary<String,String>{
+        guard let path = Bundle.module.url(forResource: "data", withExtension: "json") else { return ["":""]}
+        guard let data = try? Data(contentsOf: path) else{return ["":""]}
+        
+        let jsonResult = try? JSONSerialization.jsonObject(with: data)
+        guard let getDictionaryFromJson = jsonResult as? Dictionary<String,String> else{return ["":""]}
+        return getDictionaryFromJson
+    }
+
+}
