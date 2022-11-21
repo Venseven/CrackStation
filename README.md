@@ -1,10 +1,29 @@
-# Name : Venkatesh Subramaniyan
+# CrackStation, A Decrypter implementation
 
-# Crackstation - 2.0.0
-The following version supports single as well as double character decryption. The list of characters include alphabets (both uppercase and lowercase) and numbers (0-9).
 
-## Package CrackStation 
-The following method (**Decrypt**) accepts the SHA1 encrypted string and returns the decrypted string.
+## Overview
+* This API will be used to decrypt the SHA1 or SHA2 hashes to its original form.
+* This is intended only for assignment.
+
+## Mission Statement
+Decrypter API supports the decryption of 3|2|1 letter encrypted SHA hashes SHA1|SHA2.
+
+## Installation
+### Swift Package Manager
+The [Swift Package Manager](https://www.swift.org/package-manager/) is a "a tool for managing the distribution of Swift code. It's integerated with swift build system to automate the process of downloading, compiling, and linking dependencies"
+
+Once you have your swift package set up, add CrackStation to the list of dependencies in your `package.swift`  file: 
+
+```
+dependencies: [
+   .package(url: "https://github.com/Venseven/CrackStation.git", from: "2.1.0")
+]
+```
+
+## Usage:
+### Init method :
+### Decrypt method :
+The following method (**Decrypt**) accepts the SHA1 | SHA2 encrypted string and returns the decrypted string.
 
     Decrypt:
         input arguments (heading):
@@ -12,8 +31,7 @@ The following method (**Decrypt**) accepts the SHA1 encrypted string and returns
         returns:
             returns the decrypted output. 	
 
-## Usage:
-1. add this git url (`.package(url: "https://github.com/Venseven/CrackStation.git", from: "2.0.0")`)  in `package.swift` (package -> target/test -> dependencies)
+1. add this git url (`.package(url: "https://github.com/Venseven/CrackStation.git", from: "2.1.0")`)  in `package.swift` (package -> target/test -> dependencies)
 2.
 ```  swift
 import CrackStation
