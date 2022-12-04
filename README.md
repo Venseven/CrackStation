@@ -13,7 +13,9 @@ CrackStation is an application which is developed to decrypt the hash given to i
  Tag corresponding to release 1 where we have changes for single character decryption
  
 **2.0.0** - Tag corresponding to release 2 where we have changes for two characters
- 
+
+**2.1.1** - Tag corresponding to release 3 where we have changes for three characters
+
 **FILES**
  
 Main File  - CrackStation.swift (Implements Interface Decrypter)
@@ -50,8 +52,7 @@ CrackStation has a folder named
 
 ### **Mission Statement**
 <hr>
-The Crack Station application can be used to decrypt unsalted hashes of strings(upto length 3) and compare the result with that of expected result.
-
+By educating people about how quickly [unsalted](https://en.wikipedia.org/wiki/Salt_(cryptography)) passwords can be cracked, this library aims to increase internet security.
 <br>
 
 ###  **Installation**
@@ -84,6 +85,7 @@ The decrypt protocol has two methods <mark style="background-color: #696969"><sp
       func decrypt(shaHash: String) -> String?
 ```
 <p>The init method(constructor) initializes the dictionary by loading the data.json file</p>
+
 
 The decrypt function either returns the cracked plain-text password or, if unable to crack, then returns nil. Parameter shaHash: The SHA-1 or SHA-256 digest that corresponds to the encrypted password.Returns the underlying plain-text password if `shaHash` was successfully cracked. Otherwise returns nil.
 
